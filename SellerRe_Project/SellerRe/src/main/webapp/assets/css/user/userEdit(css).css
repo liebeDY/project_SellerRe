@@ -1,0 +1,39 @@
+ html { font-size: 62.5%; }
+ 
+ 
+ 
+#footer {
+	margin : 10rem 0 0 0;
+} 
+ 
+ .register_form {
+ 	margin : 0 10rem 0 10rem;
+ 	width : 400px;
+ }
+ 
+label {
+	margin : 0 10rem 0 10rem;
+} 
+ 
+.col-md-15 {
+ 	width : 800px;
+ 	margin : 0 10rem 0 10rem;
+}
+
+#btn2 {
+	margin : 0 0 0 10rem;
+}
+
+#btn3 {
+	margin : 0 0 0 3rem;
+}
+
+#btn4 {
+	float: right;
+	/* margin: 0 0 0 51.5rem; */
+}
+
+.form-horizontal {
+	/* border: 1px solid black; */
+	width: 76%;
+}

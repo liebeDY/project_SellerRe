@@ -1,0 +1,207 @@
+html { font-size: 62.5%; }
+
+/* 로고 및 검색창 컨테이너 */
+.logo_search_container {
+    /* border: 1px solid red; */
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: 70%;
+}
+
+/* 미등록 시 리스트 컨테이너 */
+.empty_container {
+    width:  70%;
+    margin-top: 10rem;
+    margin-bottom: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+/* 검색창 영역 */
+/* .top_menu_search_input { */
+/*     margin: 0 0 0 5rem; */
+/*     height: 4.5rem; */
+/*     width: 40rem; */
+/*     border: 1px solid; */
+/*     background: transparent; */
+/*     border-color: #3ad4b3; */
+/*     border-radius: 20px; */
+/*     font-size: 1.7rem; */
+/* } */
+
+/* 구분선 (hr) */
+hr {
+    margin: 5rem 0 5rem 0;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+/* 유저 정보 컨테이너 */
+.user_info_container {
+    /* border : 1px solid orange; */
+    width: 70%;
+    margin-left: 10rem;
+    margin: auto;
+}
+
+/* 유저 닉네임 & ID 영역 */
+.user_id_nick_area {
+    /* border: 1px solid yellow; */
+    display: flex;
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 1rem 0 1rem ;
+}
+
+.star {
+	color : red;
+}
+
+/* 유저 평점 및 정보수정 버튼 영역 */
+.user_score_editbtn_area {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 1rem 0;
+}
+
+/* 유저 평점 영역 */
+.user_score_area {
+    /* border: 1px solid blue; */
+    display: flex;
+    font-size: 2rem;
+}
+
+.user_score_btn {
+	margin : 0 0 2rem 0;
+}
+
+/* 내 정보수정 및 찜리스트 버튼 */
+.editbtn, .wishbtn {
+    float: right;
+    margin-right: 20rem;
+    font-size: 2rem;
+}
+
+/* 찜리스트 버튼 영역 (부모) */
+.user_wishbtn_area {
+    /* border: 1px solid navy; */
+    font-size: 1.5rem;
+    margin-bottom : 1.5rem;
+}
+
+/* 찜리스트 버튼영역 (자식) */
+.wishbtn_area {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 평가버튼 타입 CSS */
+.btn {
+    border-radius: 10px; 
+    border: 1px solid;
+    font-size: 2rem;
+    margin : 0 1rem 2rem 0;
+}
+
+/* 상품 리스트 컨테이너 */
+.product_list_container {
+    /* border: 1px solid black; */
+    width: 70%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+/* 상품 이미지 영역 */
+.product_img_area {
+    /* border: 1px solid blue; */
+    margin: 0 5rem 0 0;
+}
+
+/* 상품 리스트 이미지 크기 */
+.product_img {
+    width: 20rem;
+    height: 20rem;
+}
+
+/* 상품 정보 영역 */
+.product_info_area {
+    /* border: 1px solid brown; */
+    width: 66%;
+}
+
+/* 상품 정보 영역 */
+.product_name {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0 2rem 0;
+}
+
+/* 상품 디테일 링크 영역 */
+.prod_detail_link {
+    text-decoration: none;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.prod_detail_link:active {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* 상품가격 및 삭제버튼 */
+.product_price_container {
+    /* border: 1px solid orange; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0 2rem 0;
+}
+
+.prod_price {
+    font-size: 2.5rem;
+}
+
+.prod_info {
+    font-size: 2rem;
+} 
+
+.prod_category {
+    font-size: 1.5rem;
+}
+
+/* 상품설명 및 거래완료 버튼 */
+.product_info {
+    /* border: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0 2rem 0;
+}
+
+
+/* 카테고리 */
+.product_category {
+    /* border: 1px solid green; */
+    margin: 2rem 0 2rem 0;
+}
+
+/* 제품수정 & 제품삭제 & 거래완료 버튼 */
+.prod_edit_btn, .del_btn, .trade_btn {
+    font-size: 2rem;
+}
+
+
+

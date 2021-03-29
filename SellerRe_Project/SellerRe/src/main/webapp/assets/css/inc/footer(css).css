@@ -1,0 +1,106 @@
+/* 
+    ----- 단위는 rem 으로 쓰세요 -----
+
+*/
+
+
+/* 처음 글자 크기 설정 */
+
+html {
+    font-size: 62.5%;
+}
+
+
+/* -------------- footer ----------- */
+
+
+/* footer 태그 */
+
+#footer {
+    font-size: 2rem;
+    border-top: 0.7rem solid #cdf1bc;
+    border-bottom: 0.7rem solid #cdf1bc;
+    margin-bottom: 1rem;
+}
+
+
+/* footer 전체 div */
+
+#footer_total_container {
+    display: flex;
+    /* text-align: center; */
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+    background-color: #cdf1bc;
+}
+
+
+/* footer 컨텐츠 제목 : 문의메일, 제작자 */
+
+.footer_contents_span_title {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+
+/* footer 컨텐츠 span 전부 */
+
+.footer_contents_div span {
+    text-align: left;
+    margin-top: 0.3rem;
+    flex-basis: 2rem;
+}
+
+
+/* ----- footer 왼쪽 - 로고, 문의 메일 ----- */
+
+
+/* footer 왼쪽 전체 */
+
+#footer_left {
+    text-align: center;
+    margin-left: 30vw;
+}
+
+
+/* footer 로고 div */
+
+#footer_left_logo_div {
+    margin-bottom: -2.5rem;
+}
+
+
+/* 로고 img */
+
+.footer_logo_img {
+    width: 5vw;
+    height: 5vw;
+}
+
+
+/* ----- footer 오른쪽 - 제작자 ----- */
+
+
+/* footer 오른쪽 전체 */
+
+#footer_right {
+    margin-right: 20vw;
+}
+
+
+/* footer 오른쪽 - 제작자 명단 div */
+
+#footer_right_member_1 {
+    /* margin-right: 2rem; */
+    /* min-width: 20rem; */
+}
+
+
+/* ----- copyright ----- */
+
+.copyright {
+    text-align: center;
+    font-size: 2rem;
+}

@@ -1,0 +1,50 @@
+html { font-size: 62.5%; }
+
+.container {
+/* 	border : 1px solid black; */
+	width : 100rem;
+	margin : 5rem auto 5rem auto;
+}
+
+.find_pw_area {
+/* 	border : 1px solid red; */
+    width: 30rem;
+    margin: auto;
+    text-align : center;
+}
+
+.find_pw_input_area {
+/* 	border : 1px solid orange; */
+	width : 40rem;
+	margin : auto;
+}
+
+.find_pw_btn_area {
+/* 	border : 1px solid yellow; */
+	width : 40rem;
+	margin : auto;
+}
+
+p {
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+.user_email {
+	margin : 5rem 0 3rem 0;
+	width : 39rem;
+	height : 50px;
+	font-size: 2rem;
+	border-radius : 10px;
+	border : 1px solid #dadada;
+}
+
+input[type=button] {
+	width : 40rem;
+	height : 40px;
+	font-size : 2.5rem;
+	background-color: #99E0B8;
+	border-style: none;
+    color: white;
+    border-radius: 10px;
+}

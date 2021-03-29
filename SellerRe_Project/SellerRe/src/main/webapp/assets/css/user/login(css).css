@@ -1,0 +1,71 @@
+html { font-size: 62.5%; }
+
+.container {
+	margin : auto;
+    margin-top: 10rem;
+    width : 80%;
+}
+
+.logo_container {
+    width: 30rem;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+.login_container {
+    width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    margin-bottom : 5rem;
+}
+
+.id_area {
+    margin-top: 8rem;
+}
+
+
+
+.login_label {
+    font-size: 4rem;
+}
+
+.user_id, .user_pw {
+	border : 1px solid blue;
+    border-radius: 10px;
+    border: 1px solid #dadada;
+    width: 44rem;
+    height: 5rem;
+    margin: 1rem 0 1.5rem 6rem;
+    font-size: 2rem;
+}
+
+.login_btn {
+    width: 45rem;
+    margin: 1.5rem 0 0 6rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    min-height: 5rem;
+    background-color: #99E0B8;
+    font-size: 2.5rem;
+    border-style: none;
+    color: white;
+}
+
+.register_area {
+    margin: 3rem 0 0 6rem;
+    font-size: 2rem;
+}
+
+.register, .find_pw {
+    color: gray;
+}
+
+a {
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 1.5rem;
+}

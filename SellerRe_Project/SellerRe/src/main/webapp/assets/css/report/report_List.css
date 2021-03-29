@@ -1,0 +1,87 @@
+/* 1rem = 10px로 설정 */
+html { font-size: 62.5%; }
+
+
+.all {
+    margin-top: 20rem;
+    margin-bottom: 20rem;
+}
+
+table {
+    width: 70%;                 /* 테이블 전체 넓이 설정 */
+    min-width: 110rem;          /* 테이블 최소 사이즈 */
+    border-collapse: collapse;  /* 테이블 이중선 제거 */
+    text-align: center;         /* 글씨 가운데 정렬 */
+
+    /* 테이블 중앙으로 설정 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    border-bottom: 2px solid #9de792;
+    color: #5D5D5D;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.th_title {
+    width: 80rem;
+}
+
+td {
+    font-size: 1.5rem;
+    border-bottom: 1px solid #BDBDBD;
+    padding: 1rem 0 1rem 0;
+}
+
+.td_btn {
+    border-top: 2px solid #9de792;
+    border-bottom: 1px solid #ffffff;
+    text-align: right;
+    padding: 1rem 0.5rem 0 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.writing_btn {
+    border-radius: 5px;          /* 모서리 둥글게 */
+    background-color: #ffffff; /* 배경색 */
+    color: #4c4c4c;            /* 글씨 색 */
+    border: 1px solid #BDBDBD; /* 테두리 설정 */
+    height: 3rem;                /* 버튼 높이 */
+    width: 10rem;                /* 버튼 넓이 */
+    font-size: 1.3rem;           /* 글씨 크기 */
+    font-weight: bold;           /* 글씨 두껍게 */
+    outline: none;               /* 버튼 클릭시 생기는 선 삭제 */
+}
+
+.writing_btn:hover{
+    color: #ffffff;
+    background-color: #9de792;
+  }
+
+/* a태그 링크 설정 */
+a:link {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #5D5D5D;
+}
+
+/* a태그 클릭 */
+a:active {
+    color: #47C83E;
+    font-weight: bold;
+    text-decoration-line: underline; /* 글씨 아래에 라인표시 */
+}
+
+/* 방문한 링크 색 */
+a:visited { 
+    color: #5D5D5D;
+}
+
+/* 마우스 호버 설정 */
+/* a:hover { */
+/*     color: #47C83E; */
+/*     font-weight: bold; */
+/*     box-shadow: 0 -0.5rem #b1ffa5 inset; 형광팬 효과 */
+/* } */

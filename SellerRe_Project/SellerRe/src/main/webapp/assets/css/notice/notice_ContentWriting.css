@@ -1,0 +1,136 @@
+/* 1rem = 10px로 설정 */
+html { 
+    font-size: 62.5%;
+    color: #4C4C4C;
+}
+
+/* 공지사항 게시글 테이블 스타일 */
+table {
+    margin-top: 10rem;          /* 페이지 에서 테이블 간격 */
+    width: 70%;                 /* 테이블 전체 넓이 설정 */
+    min-width: 110rem;          /* 테이블 최소 사이즈 */
+    border-collapse: collapse;  /* 테이블 이중선 제거 */
+    text-align: center;         /* 글씨 가운데 정렬 */
+
+    /* 테이블 중앙으로 설정 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    font-size: 1.7rem;            /* 글씨크기 */
+    border-bottom: 2px solid #9de792;
+    padding-top: 0.5rem;          /* 상단 간격 */
+    padding-bottom: 0.5rem;       /* 하단 간격 */
+}
+
+textarea {
+    resize: none;       /* 사이즈 조절 제거 */
+    border: none;       /* 테두리 선 제거 */
+    outline: none;      /* 클릭시 테두리 선 제거 */
+    line-height: 2.5rem; /* 텍스트 줄 간격 설정 */
+    font-size: 2.5rem;  /* 글씨크기 */
+	color: #4c4c4c;   /* 글씨색 */
+	width: 90%;        /* 넓이 */
+    height: 50rem;      /* 높이 */
+    
+    /* 간격설정 */
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-left: 5rem;
+}
+
+/* ========== 스크롤바 설정 ========== */
+
+::-webkit-scrollbar{
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {     /* 스크롤바 뒷배경 */
+    background-color:#f0f0f0;
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {     /* 스크롤바 */
+    background-color:#E0FFDB;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {      /* 스크롤바 마우스 호버 */
+    background: #c9fdbf;
+}
+
+::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {     /* 스크롤바 버튼 */
+    width:16px;
+    height:16px;
+    background:#c5ffbc;
+    border-radius: 0.5rem;
+} 
+
+.title {
+    text-align: left;
+    padding-bottom: 2rem;
+    width: 100rem;
+}
+
+.title_text_box {
+    border: none;/* 선제거 */
+    outline: none;/* 클릭시 선 제거 */
+    font-size: 1.7rem;
+    color: #4c4c4c;
+    border-radius: 0.5rem;
+    padding-left: 2rem;
+	width: 80%;
+	height: 100%;
+}
+
+.content {
+    height: 55rem;
+    padding-left: 5rem;
+}
+
+
+
+/* ========== 버튼설정 ========== */
+
+.btn_td {   /* 버튼 테이블 */
+    border-top: 1px solid #9de792;
+    text-align: right;
+    padding-right: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.writing_btn {
+    border-radius: 5px;          /* 모서리 둥글게 */
+    background-color: #ffffff; /* 배경색 */
+    color: #4c4c4c;            /* 글씨 색 */
+    border: 1px solid #BDBDBD; /* 테두리 설정 */
+    height: 3rem;                /* 버튼 높이 */
+    width: 10rem;                /* 버튼 넓이 */
+    font-size: 1.3rem;           /* 글씨 크기 */
+    font-weight: bold;           /* 글씨 두껍게 */
+    outline: none;               /* 버튼 클릭시 생기는 선 삭제 */
+}
+
+.writing_btn:hover{
+    color: #ffffff;
+    background-color: #9de792;
+  }
+
+.reset_btn {
+    border-radius: 5px;          /* 모서리 둥글게 */
+    background-color: #ffffff; /* 배경색 */
+    color: #4c4c4c;            /* 글씨 색 */
+    border: 1px solid #BDBDBD; /* 테두리 설정 */
+    height: 3rem;                /* 버튼 높이 */
+    width: 10rem;                /* 버튼 넓이 */
+    font-size: 1.3rem;           /* 글씨 크기 */
+    font-weight: bold;           /* 글씨 두껍게 */
+    outline: none;               /* 버튼 클릭시 생기는 선 삭제 */
+}
+
+.reset_btn:hover{
+    color: #ffffff;
+    background-color: #9de792;
+  }

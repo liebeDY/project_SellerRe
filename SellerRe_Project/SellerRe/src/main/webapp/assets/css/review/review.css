@@ -1,0 +1,192 @@
+/* 1rem = 10px로 설정 */
+html { 
+    font-size: 62.5%;
+}
+
+.review_table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid #aaaaaa;
+    border-radius: 2rem;
+
+    background-color: #ffffff;
+
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.review_view_table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 15rem;
+
+    padding: 1rem 1rem 1rem 1rem;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid #aaaaaa;
+    border-radius: 2rem;
+
+    background-color: #ffffff;
+
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.review_writing_td {
+    border-radius: 1rem;
+    box-shadow: inset 1px 1px 3px #97b38b;
+    background-color: #e6ffda77;
+    text-align: center;
+    width: 90%;
+    height: 10rem;
+}
+
+.writing_btn_td {
+    width: 10%;
+    height: 10rem;
+}
+
+.review_writing {
+    resize: none;
+    outline: none;
+    border: none;
+
+    padding-top: 1rem;
+    padding-left: 1rem;
+
+    height: 99%;
+    width: 99%;
+    font-size: 2.5rem;
+    background-color: #ffffff00;
+}
+
+.review_writing_btn {
+    width: 90%;
+    height: 99%;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 1px solid #616260;
+    background-color: #ffffff;
+}
+
+.review_writing_btn:hover {
+    font-size: 1.7rem;
+    background-color: #e6ffda4f;
+}
+
+.review_view_order_td {
+    text-align: left;
+    height: 15rem;
+}
+
+.review_order_info {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.order_id, .seller_id {
+    font-size: 2rem;
+}
+
+.seller_id {
+    margin-left: 1rem;
+}
+
+.order_date, .seller_date {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.review_btn {
+    margin-left: 1rem;
+}
+
+.review_seller_info {
+    margin-right: 2rem;
+}
+
+.review_btn {
+    margin-left: 1rem;
+}
+
+.review_edit, .review_del {
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 1px solid #616260;
+    background-color: #ffffff;
+}
+
+.review_edit:hover, .review_del:hover {
+    font-size: 1.7rem;
+    background-color: #e6ffda4f;
+}
+
+.review_view_order {
+    resize: none;
+    outline: none;
+    border: none;
+
+    padding-top: 1rem;
+    padding-left: 1rem;
+
+    height: 9rem;
+    width: 89%;
+    font-size: 2.5rem;
+
+    border-radius: 1rem;
+    box-shadow: inset 1px 1px 3px #97b38b;
+    background-color: #e6ffda77;
+}
+
+.review_view_seller_td {
+    text-align: right;
+    height: 15rem;
+}
+
+.review_view_seller {
+    resize: none;
+    outline: none;
+    border: none;
+
+    padding-top: 1rem;
+    padding-left: 1rem;
+
+    height: 9rem;
+    width: 89%;
+    font-size: 2.5rem;
+
+    border-radius: 1rem;
+    box-shadow: inset 1px 1px 3px #97b38b;
+    background-color: #e7ffc077;
+}
+
+.review_user_link {
+    text-decoration: none;
+    color: #2a2a2a;
+}
+
+.review_user_link:hover {
+    color: #7a9c6d;
+    font-weight: bold;
+}

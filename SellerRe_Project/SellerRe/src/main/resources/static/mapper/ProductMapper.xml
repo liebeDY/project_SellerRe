@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.sellerre.product.ProductMapper">
+   <resultMap type="com.project.sellerre.product.Product" id="Product">
+      <result property="product_num"		column="product_num" />
+      <result property="product_name"		column="product_name" />
+      <result property="product_price"		column="product_price" />
+      <result property="product_info"		column="product_info" />
+      <result property="category1_num"		column="category1_num" />
+      <result property="category2_num"		column="category2_num" />
+      <result property="category3_num"		column="category3_num" />
+      <result property="user_id"			column="user_id" />
+      <result property="reg_date"			column="reg_date" />
+      <result property="product_hit"		column="product_hit" />
+      <result property="result"				column="result" />
+   </resultMap>
+   
+   <insert id="insertProduct" parameterType="com.project.sellerre.product.Product">
+   		INSERT	INTO sellerre_product 
+   		VALUES	( #{product_num}, #{product_name}, #{product_price}, #{product_info}, 
+   				  #{category1_num}, #{category2_num}, #{category3_num}, #{user_id}, sysdate, 0, 1 )
+   </insert>
+   
+   <select id="selectProductByNum" resultMap="Product" parameterType="int">
+   		SELECT	* 
+   		FROM	sellerre_product
+   		WHERE	product_num = #{product_num}
+   </select>
+   
+   <select id="selectProductByUserId" resultMap="Product" parameterType="String">
+   		SELECT	*
+   		FROM	sellerre_product
+   		WHERE	user_id = #{user_id}
+   		ORDER BY product_num DESC
+   </select>
+   
+   <select id="selectProductByName" resultMap="Product" parameterType="String">
+      SELECT   	*
+      FROM   	sellerre_product
+      WHERE   	product_name LIKE '%${product_name}%'
+      ORDER BY 	product_num DESC
+   </select>
+   
+   <select id="selectProductByPrice" parameterType="java.util.Map" resultMap="Product">
+      SELECT   	*
+      FROM   	sellerre_product
+      WHERE   	product_price BETWEEN #{min} AND #{max}
+      ORDER BY 	product_num
+   </select>
+   
+   <select id="selectProductByCategory1" parameterType="int" resultMap="Product">
+      SELECT   	*
+      FROM   	sellerre_product
+      WHERE   	category1_num = #{category1_num}
+      ORDER	BY	product_num DESC
+   </select>
+   
+   <select id="selectProductByCategory2" parameterType="int" resultMap="Product">
+      SELECT   	*
+      FROM   	sellerre_product
+      WHERE   	category2_num = #{category2_num}
+   </select>
+   
+   <select id="selectProductByCategory3" parameterType="int" resultMap="Product">
+      SELECT   	*
+      FROM   	sellerre_product
+      WHERE   	category3_num = #{category3_num}
+   </select>
+   
+   <select id="selectProductAll" resultMap="Product">
+      SELECT   	*
+      FROM   	sellerre_product
+      ORDER BY 	product_num DESC
+   </select>
+   
+     <select id="selectProductByPriceAndName" parameterType="java.util.Map" resultMap="Product">
+      SELECT * 
+      FROM sellerre_product
+      WHERE product_name LIKE '%${product_name}%'
+      AND product_price
+      BETWEEN #{min} AND #{max}
+   </select>
+   
+   <select id="selectProductByPriceAndCategoryName" parameterType="java.util.Map" resultMap="Product">
+      SELECT	*
+	  FROM		sellerre_product
+	  WHERE		category1_num = (SELECT	category_num
+								 FROM	category1
+								 WHERE	category_name = #{category_name})
+      AND product_price
+      BETWEEN #{min} AND #{max}
+   </select>
+   
+   <select id="selectProductByCategoryName" parameterType="String" resultMap="Product">
+	SELECT	*
+	FROM	sellerre_product
+	WHERE	category1_num = (SELECT	category_num
+							 FROM	category1
+							 WHERE	category_name = #{category_name})
+   </select>
+   
+   <update id="updateProduct" parameterType="com.project.sellerre.product.Product">
+      UPDATE   	sellerre_product
+      SET		product_name = #{product_name}, product_price = #{product_price}, product_info = #{product_info},
+      			category1_num = #{category1_num}, category2_num = #{category2_num}, category3_num = #{category3_num}, user_id = #{user_id}, result = #{result}
+      WHERE   	product_num = #{product_num} 
+   </update>
+   
+   <delete id="deleteProduct" parameterType="int">
+      DELETE   	FROM sellerre_product
+      WHERE   	product_num = #{product_num}
+   </delete>
+   
+   
+   <select id="getNum" resultType="int">
+      SELECT   	seq_product.nextval
+      FROM   	dual
+   </select>
+   
+   <select id="getTotalProductNum" resultType="int">
+         SELECT   COUNT(*)
+         FROM   sellerre_product
+   </select>
+   
+      <!-- 오늘 등록된 상품 갯수 -->
+   <select id="getTodayProductNum" resultType="int">
+      SELECT   COUNT(*) 
+      FROM   	sellerre_product 
+      WHERE   TO_CHAR(reg_date,'YYMMDD') = TO_CHAR(SYSDATE,'YYMMDD')
+   </select>	
+   
+   <!-- 클릭 시 조회수 1증가 -->
+   <update id="productHit" parameterType="int">
+		UPDATE	sellerre_product
+		SET		product_hit = product_hit+1
+		WHERE	product_num = #{product_num}
+	</update>
+</mapper>

@@ -1,0 +1,159 @@
+html {
+    font-size: 62.5%;
+}
+
+
+/* 愿 由ъ옄 topbar  쁺 뿭 */
+
+.admin_topbar_area {
+    border: 1px solid white;
+    background-color: #bbfacb;
+    height: 20rem;
+}
+
+.admin_main {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    margin: 4rem 0 0 0;
+}
+
+.mm {
+    /* border: 1px solid red; */
+    font-size: 8rem;
+    float: center;
+    color: white;
+}
+
+.admin_main ul,
+.admin_list_area {
+    /* border: 1px solid orange; */
+    display: flex;
+    list-style: none;
+}
+
+.admin_main a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.admin_main ul>li {
+    margin: 0 5rem 0 0;
+    font-size: 1.5rem;
+}
+
+span {
+    margin: 0 6rem 0 5rem;
+}
+
+
+/* ----- 관리자 메뉴 영역 ----- */
+
+.admin_list_area {
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.admin_list_area_list {
+    margin: 0 2rem 0 2rem;
+}
+
+.admin_list_area_list:hover {
+    background-color: #9de792;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#print_area {
+    border-top: 1px solid black;
+}
+
+.list_button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+}
+
+.list_button:hover {
+    background-color: #9de792;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* ----- 클릭하면 나오는 메뉴 영역 ----- */
+
+.admin_page_category_product_menu_area,
+.admin_page_category_board_menu_area {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.admin_page_category_product_menu_list,
+.admin_page_category_board_menu_list {
+    margin: 0 2rem 0 2rem;
+    list-style: none;
+}
+
+.admin_page_category_product_menu_list_div,
+.admin_page_category_board_menu_list_div {
+    width: 100%;
+    /* height: 5rem; */
+    /* background-color: #9de792; */
+    /* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
+    text-align: center;
+}
+
+.admin_page_category_product_menu_list_div:hover,
+.admin_page_category_board_menu_list_div:hover {
+    background-color: #9de792;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+}
+
+.admin_page_category_product_menu_list_div a,
+.admin_page_category_board_menu_list_div a {
+    text-decoration: none;
+    color: black;
+}
+
+#content_area {
+    /* border-top: 1px solid black; */
+/*     background-color: #FAFAFA; */
+    text-align: center;
+    font-size: 5rem;
+    margin: 2rem 30rem 0rem 30rem;
+}
+
+*/ .list {
+    font-size: 3rem;
+    margin: 0 3.5rem 0 3.5rem;
+}
+
+.admin_page_logo {
+    /* border: 1px solid red; */
+}
+
+.admin_page_product {
+    /* border: 1px solid green; */
+}
+
+.admin_page_info {
+    /* border : 1px solid orange; */
+}
+
+.admin_page_user {
+    /* border: 1px solid yellow; */
+}

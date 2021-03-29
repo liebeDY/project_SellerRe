@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.sellerre.review.ReviewMapper">
+   <resultMap type="com.project.sellerre.review.Review" id="Review">
+      <result column="review_num" 		property="review_num" />
+      <result column="writer_id" 		property="writer_id" />
+      <result column="review_content" 	property="review_content" />
+      <result column="product_num" 		property="product_num" />
+      <result column="review_date" 		property="review_date" />
+   </resultMap>
+   
+   <insert id="insertReview" parameterType="com.project.sellerre.review.Review">
+   		INSERT	INTO sellerre_review
+   		VALUES ( seq_sellerre_review.nextval, #{writer_id}, #{review_content}, #{product_num}, sysdate )
+   </insert>
+   
+   <select id="selectAllReview" resultMap="Review">
+   		SELECT	*
+   		FROM	sellerre_review
+   		ORDER	BY review_num
+   </select>
+   
+   <select id="selectReviewByProductNum" parameterType="int" resultMap="Review">
+   		SELECT	*
+   		FROM	sellerre_review
+   		WHERE	product_num = #{product_num}
+   </select>
+   
+   <select id="countReviewUserIdByProductNum" parameterType="int" resultType="Integer">
+      SELECT
+      COUNT (writer_id)
+      FROM   sellerre_review
+      WHERE   product_num = #{product_num}
+   </select>
+   
+   
+   <update id="updateReview" parameterType="com.project.sellerre.review.Review">
+   		UPDATE	sellerre_review
+   		SET		review_content = #{review_content}
+   		WHERE	review_num = #{review_num}
+   </update>
+   
+   <delete id="deleteReview" parameterType="int">
+   		DELETE	FROM sellerre_review
+   		WHERE	review_num = #{review_num}
+   </delete>
+</mapper>

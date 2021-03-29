@@ -1,0 +1,110 @@
+html {
+    font-size: 62.5%;
+}
+
+
+
+
+/*  --------------- 배너 슬라이드---------------  */
+
+
+/*------------ 카테고리 ----------- */
+
+.main_category_container {
+    margin: 5vw 10vw 5vw 10vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+/*     display: flex; */
+/*     justify-content: space-evenly; */
+/*     flex-wrap: wrap; */
+/*     align-content: center; */ 
+}
+
+
+
+.main_category_a {
+    width: 15vw;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.main_category_img {
+    max-width: 17rem;
+    max-height: 20rem;
+    width: 6vw;
+    height: 8vh;
+}
+
+
+/* 카테고리 첫째 줄 */
+
+.main_category_group1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2rem 0 2rem 0;
+}
+
+
+/* 카테고리 둘째 줄 */
+
+.main_category_group2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5rem 0 2rem 0;
+}
+
+
+/* --------------- 상품 리스트 전체 영역 설정 --------------- */
+
+.main_product_list_container {
+    margin: 2vw 10vw 2vw 10vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.main_product_total_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom : 10rem;
+}
+
+
+/* 상품 리스트 영역 별 설정 */
+
+.main_product_list {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* 리스트 사진 설정 */
+
+.main_product_img {
+    width: 300px;
+    height: 300px;
+}
+
+
+/* 리스트 상품 설명 설정 */
+
+.main_product_content_a {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+/* 리스트 상품 가격 설정 */
+
+.main_product_price_div span {
+    text-decoration: none;
+    color: rgb(207, 73, 73);
+    font-size: 2rem;
+}

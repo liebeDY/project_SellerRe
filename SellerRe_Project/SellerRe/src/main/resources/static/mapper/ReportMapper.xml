@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.sellerre.report.ReportMapper">
+	
+	<resultMap type="com.project.sellerre.report.Report" id="Report">
+		<result property="report_num" column="report_num"/>
+		<result property="report_reason" column="report_reason"/>
+		<result property="report_title" column="report_title"/>
+		<result property="report_content" column="report_content"/>
+		<result property="report_date" column="report_date"/>
+		<result property="report_hits" column="report_hits"/>
+		<result property="report_writer_id" column="report_writer_id"/>
+	</resultMap>
+	
+	<!-- 신고 게시판 게시글 등록 -->
+	<insert id="insertReport" parameterType="com.project.sellerre.report.Report">
+		INSERT INTO sellerre_report
+		VALUES ( #{report_num}, #{report_reason}, #{report_title}, 
+				 #{report_content}, sysdate, 0, #{report_writer_id}
+				)
+	</insert>
+	
+	<!-- 가상 테이블에서 시퀀스 번호 생성 -->
+	<select id="reportSeqNum" resultType="int">
+      SELECT 	seq_sellerre_report.nextval
+      FROM 		dual
+   </select>
+	
+	<!-- 시퀀스 번호로 선택 -->
+	<select id="selectReportByNum" parameterType="int" resultMap="Report">
+		SELECT 	*
+		FROM 	sellerre_report
+		WHERE 	report_num = #{report_num}
+	</select>
+	
+	<!-- 게시글 전체 출력 -->
+	<select id="selectAllReprotByNum" resultMap="Report">
+		SELECT 	*
+		FROM 	sellerre_report
+		ORDER 	BY report_num
+	</select>
+	
+	<!-- 수정 -->
+   <update id="editReport" parameterType="com.project.sellerre.report.Report"> 
+      UPDATE	sellerre_report 
+      SET    	report_title = #{report_title},
+      			report_reason = #{report_reason},
+      			report_content = #{report_content}
+      WHERE   	report_num = #{report_num} 
+   </update>
+   
+   <!-- 삭제 -->
+   <delete id="deleteReport" parameterType="int"> 
+      DELETE	FROM sellerre_report 
+      WHERE 	report_num = #{report_num} 
+   </delete>
+   
+   <!-- 조회수 -->
+   <update id="reportHits" parameterType="int"> 
+      UPDATE   	sellerre_report 
+      SET   	report_hits = report_hits+1 
+      WHERE   	report_num = #{report_num} 
+   </update>
+</mapper>

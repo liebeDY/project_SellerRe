@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.sellerre.wish.WishMapper">
+
+   <resultMap type="com.project.sellerre.wish.Wish" id="Wish">
+      <result column="wish_num" property="wish_num"/>
+      <result column="user_id" property="user_id"/>
+      <result column="product_num" property="product_num"/>
+   </resultMap>
+   
+   <resultMap type="com.project.sellerre.product.Product" id="Product">
+      <result property="product_num"      column="product_num" />
+      <result property="product_name"      column="product_name" />
+      <result property="product_price"      column="product_price" />
+      <result property="product_info"      column="product_info" />
+      <result property="category1_num"      column="category1_num" />
+      <result property="category2_num"      column="category2_num" />
+      <result property="category3_num"      column="category3_num" />
+      <result property="user_id"         column="user_id" />
+   </resultMap>
+   
+   <insert id="insertWish" parameterType="com.project.sellerre.wish.Wish">
+      INSERT   INTO   sellerre_wish
+      VALUES   (#{wish_num}, #{product_num}, #{user_id})
+   </insert>
+   
+   <select id="selectByUserId" parameterType="String" resultMap="Product">
+      SELECT   * 
+      FROM      sellerre_product 
+      WHERE   product_num IN (SELECT   product_num 
+                  FROM      sellerre_wish 
+                  WHERE   user_id = #{user_id})
+    </select>
+   
+    <select id="countUserIdByProductNum" parameterType="int" resultType="int">
+      SELECT
+      COUNT (user_id)
+      FROM   sellerre_wish
+      WHERE   product_num = #{product_num}
+   </select>
+   
+   <select id="selectByUserIdProductNum" parameterType="java.util.Map" resultMap="Wish">
+      SELECT * 
+      FROM sellerre_wish
+      WHERE product_num = #{product_num}
+     AND user_id = #{user_id}
+   </select>
+   
+   
+   
+   <delete id="deleteWish" parameterType="java.util.Map">
+      DELETE
+      FROM   sellerre_wish
+      WHERE   product_num = #{product_num} AND user_id = #{user_id}
+   </delete>
+   
+   <delete id="deleteAllWish" parameterType="String">
+      DELETE
+      FROM   sellerre_wish
+      WHERE   user_id = #{user_id}
+   </delete>
+   
+   <!-- 제품 삭제 시 찜 목록까지 삭제 -->
+   <delete id="deleteProductAndWish" parameterType="int">
+   		DELETE	FROM sellerre_wish
+   		WHERE	product_num = #{product_num}
+   </delete>
+   
+   <select id="getNum" resultType="int">
+      SELECT      seq_sellerre_wish.nextval
+      FROM      dual
+   </select>
+   
+   
+</mapper>

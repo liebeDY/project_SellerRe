@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.sellerre.qna.QnAMapper">
+	
+	<resultMap type="com.project.sellerre.qna.QnA" id="QnA">
+		<result property="qna_num" column="qna_num"/>
+		<result property="qna_title" column="qna_title"/>
+		<result property="qna_content" column="qna_content"/>
+		<result property="qna_type" column="qna_type"/>
+	</resultMap>
+	
+	<insert id="insertQnA" parameterType="com.project.sellerre.qna.QnA">
+		INSERT INTO sellerre_qna
+		VALUES ( seq_sellerre_qna.nextval, #{qna_title}, #{qna_content}, #{qna_type} )
+	</insert>
+	
+	<!-- QnA 시퀀스 번호로 선택 -->
+	<select id="selectQnAByNum" parameterType="int" resultMap="QnA">
+		SELECT 	*
+		FROM 	sellerre_qna
+		WHERE 	qna_num = #{qna_num}
+	</select>
+	
+	<!-- QnA 타입으로 선택 -->
+	<select id="selectQnAType" parameterType="int" resultMap="QnA">
+		SELECT 	*
+		FROM 	sellerre_qna
+		WHERE 	qna_type = #{qna_type}
+	</select>
+	
+	<!-- QnA 전체 선택 -->
+	<select id="selectAllQnA" resultMap="QnA">
+		SELECT 	*
+		FROM 	sellerre_qna
+		ORDER	BY qna_num
+	</select>
+	
+	<update id="editQnA" parameterType="com.project.sellerre.qna.QnA">
+		UPDATE 	sellerre_qna
+		
+		SET 	qna_title = #{qna_title},
+				qna_content = #{qna_content},
+				qna_type = #{qna_type}
+			
+		WHERE 	qna_num = #{qna_num}
+	</update>
+	
+	<delete id="deleteQnA" parameterType="int">
+		DELETE 	FROM sellerre_qna
+		WHERE 	qna_num = #{qna_num}
+	</delete>
+	
+	
+	
+</mapper>

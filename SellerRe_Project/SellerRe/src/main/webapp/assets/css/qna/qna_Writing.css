@@ -1,0 +1,91 @@
+html { 
+    font-size: 62.5%;
+    color: #4C4C4C;
+}
+
+.QnA_Writing_Table {
+    margin-top: 10rem;
+    width: 50%;
+    min-width: 80rem;
+    border-radius: 3rem;
+    background-color: #ffffff;
+    height: 100%;
+    font-size: 2rem;
+    box-shadow: 2px 2px 10px #808080;
+    
+    /* 테이블 중앙으로 설정 */
+    margin-left: auto;
+    margin-right: auto;
+    
+    margin-bottom: 10rem;
+}
+
+.qna_title_label, .qna_type_lable, .qna_content_lable {
+    padding-left: 3rem;
+    height: 5rem;
+}
+
+.qna_title_td_1, .qna_type_td_1, .qna_content_td_1 {
+    width: 8rem;
+}
+
+.qna_title_td_2, .qna_type_td_2, .qna_content_td_2 {
+    text-align: center;
+    width: 40rem;
+}
+
+.qna_title_td_1, .qna_title_td_2 {
+    padding-top: 3rem;
+}
+
+.qna_type_td_1, .qna_type_td_2 {
+    padding-top: 3rem;
+}
+
+.qna_title {
+    border: none;
+    outline: none;
+    color: #4C4C4C;
+    border-bottom: 1px solid #4C4C4C;
+    width: 80%;
+    padding-left: 1.5rem;
+    font-size: 2rem;
+}
+
+.qna_content {
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    resize: none;
+    border-radius: 1rem;
+    outline: none;
+    line-height: 2.5rem;
+    font-size: 2.5rem;
+	color: #4c4c4c;
+    width: 80%;
+    height: 50rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.qna_btn_td {
+    text-align: right;
+    padding-bottom: 3rem;
+    padding-right: 6rem;
+}
+
+.qna_cancel_btn, .qna_writing_btn {
+    outline: none;
+    border: 1px solid #4C4C4C;
+    color: #4C4C4C;
+    background-color: #ffffff;
+    width: 13rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+
+.qna_cancel_btn:hover, .qna_writing_btn:hover {
+    background-color: #a4e79b;
+}

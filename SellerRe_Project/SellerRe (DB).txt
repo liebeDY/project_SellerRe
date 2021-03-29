@@ -1,0 +1,176 @@
+---- 회원 ----
+
+CREATE TABLE sellerre_user(
+    user_num number,
+    user_id VARCHAR2(20) PRIMARY KEY,
+    user_pw VARCHAR2(20) NOT NULL,
+    user_name VARCHAR2(50) NOT NULL,
+    user_nickname VARCHAR2(50) NOT NULL,
+    user_email VARCHAR2(50) NOT NULL,
+    user_tel VARCHAR2(20) NOT NULL,
+    user_postcode VARCHAR2(50) NOT NULL,
+    user_addr1 VARCHAR2(255) NOT NULL,
+    user_addr2 VARCHAR2(255) NOT NULL,
+    user_birthday date,
+    user_regdate date,
+    user_score number,
+    user_scorecount number,
+    user_type number
+);
+
+
+CREATE SEQUENCE seq_sellerre_user;
+
+
+
+＊＊＊＊＊＊   관리자 계정 생성 SQL ＊＊＊＊＊＊
+insert into sellerre_user values (seq_sellerre_user.nextval, 'admin', 'admin', 'admin_name', 'admin_nick', 'admin@naver.com', 
+                                  '01011111111', '14154', '동구 판교', '판교역 1번출구', sysdate, sysdate, 0, 0, 2);
+
+복사 붙여넣기 후 commit하기 (필수!!!!)
+
+
+
+----- 상품 ----
+
+create table sellerre_product (
+   product_num      	number      	primary key,
+   product_name      	varchar2(50)   	not null,
+   product_price      	number      	not null,
+   product_info      		varchar2(500),
+   category1_num   		number      	references category1(category_num),
+   category2_num   		number      	references category2(category_num),
+   category3_num   		number      	references category3(category_num),
+   user_id      		varchar2(20)   	references sellerre_user(user_id) on delete cascade,
+   reg_date		date,
+   product_hit		number default 0,
+   result			number default 1
+);
+
+
+create sequence seq_sellerre_product;
+
+
+
+
+
+
+
+
+---- 신고 게시판 ----
+
+
+create table sellerre_report(
+   report_num number primary key,
+   report_reason varchar2(20) not null,
+   report_title varchar2(50) not null,
+   report_content varchar2(500) not null,
+   report_date date,
+   report_hits number default 0,
+   report_writer_id varchar2(20) references sellerre_user(user_id) on delete cascade
+);
+
+create sequence seq_sellerre_report;
+
+
+
+
+
+
+
+---- 공지사항 ----
+
+create table sellerre_notice(
+   notice_num number primary key,
+   notice_title varchar2(50) not null,
+   notice_content varchar2(500) not null,
+   notice_date date,
+   notice_hits number default 0
+);
+
+create sequence seq_notice;
+
+
+
+
+
+
+
+
+
+
+---- 카테고리 ----
+
+create table category1(
+category_num number primary key, 
+category_name varchar2(50) not null);
+
+
+create sequence seq_category1;
+
+
+
+
+
+create table category2(
+category_num number primary key, 
+category_name varchar2(50) not null, 
+parent_category_num number references category1(category_num) on delete cascade);
+
+
+create sequence seq_category2;
+
+
+
+
+
+create table category3(
+category_num number primary key, 
+category_name varchar2(50) not null, 
+parent_category_num number references category2(category_num) on delete cascade);
+
+
+create sequence seq_category3;
+
+
+
+
+
+
+---- Q&A게시판 테이블 ----
+
+create table sellerre_qna(
+    qna_num number primary key,
+    qna_title varchar2(500) not null,
+    qna_content varchar2(500) not null,
+    qna_type number
+);
+
+
+create sequence seq_sellerre_qna;
+
+---- WISH 테이블 ----
+
+create TABLE sellerre_wish(
+wish_num number PRIMARY key,
+product_num number references sellerre_product(product_num) on delete cascade,
+user_id VARCHAR2(20) references sellerre_user(user_id) on delete cascade
+);
+
+create SEQUENCE seq_sellerre_wish;
+
+
+
+
+
+---- 리뷰 ----
+create table sellerre_review(
+review_num number primary key,
+writer_id  varchar2(50) references sellerre_user(user_id) on delete cascade,
+review_content varchar2(255),
+product_num number references sellerre_product(product_num) on delete cascade,
+review_date date
+);
+
+create sequence seq_sellerre_review;
+

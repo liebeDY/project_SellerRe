@@ -1,0 +1,99 @@
+html {
+    font-size: 62.5%;
+}
+
+.admin_category_container {
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+.admin_category_area {
+    /* border: 1px solid red; */
+    width: 65%;
+    margin: auto;
+}
+
+hr {
+    margin: 3rem 0 3rem 0;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.dddd {
+    border-left: 1px solid black;
+    height: 50rem;
+}
+
+.admin_all_category_area {
+    /* border: 1px solid blue; */
+    width: 65%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin_category1,
+.admin_category3,
+.admin_category3 {
+    margin: 0 10rem 0 10rem;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+
+/* 각 테이블 제목 */
+
+.admin_category_caption {
+    border: 1px solid black;
+    font-size: 2.5rem;
+    padding: 1rem 0 1rem 0.5rem;
+    background-color: #9de792;
+    color: white;
+}
+
+td {
+    border: 1px solid black;
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    text-align: center;
+}
+
+
+/* 항목 처음 나타날 때 */
+
+.category1_input,
+.category2_input,
+.category3_input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 1.5rem;
+    /* font-weight: 600; */
+    border: none;
+}
+
+
+/* 항목 hover  */
+
+.category1_input:hover,
+.category2_input:hover,
+.category3_input:hover {
+    cursor: pointer;
+}
+
+
+/* 항목 클릭 */
+
+.category1_input:focus,
+.category2_input:focus,
+.category3_input:focus {
+    outline: none;
+}
